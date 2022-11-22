@@ -14,20 +14,20 @@ jobs:
         run: npm ci
       - name: Run Test
         run: npm test
-    deploy:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Install checkout
-          uses: action/checkout@v3
-        - name: Install NodeJS
-          uses: action/setup-node@v3
-          with:
-            node-version: 18
-        - name: Install dependences
-          run: npm ci
-        - name: Run Test
-          run: npm test
-        - name: Run build
-          run: npm run build
-        - name: deploying
-          run: echo "deploy...."
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install checkout
+        uses: action/checkout@v3
+      - name: Install NodeJS
+        uses: action/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install dependences
+        run: npm ci
+      - name: Run Test
+        run: npm test
+      - name: Run build
+        run: npm run build
+      - name: deploying
+        run: echo "deploy...."
